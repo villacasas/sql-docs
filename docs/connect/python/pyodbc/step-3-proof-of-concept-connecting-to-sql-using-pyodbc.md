@@ -62,7 +62,7 @@ In this example, you see how to run an [INSERT](../../../t-sql/statements/insert
 ```python
 #Sample insert query
 cursor.execute("""
-INSERT INTO SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) 
+INSERT INTO SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID
 VALUES (?,?,?,?,?)""",
 'SQL Server Express New 20', 'SQLEXPRESS New 20', 0, 0, CURRENT_TIMESTAMP) 
 cnxn.commit()
